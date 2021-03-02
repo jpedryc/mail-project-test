@@ -5,10 +5,9 @@ namespace App\Listeners;
 use App\Models\Mail;
 use Carbon\Carbon;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Log;
 
-class MarkEmailAsSend
+class MarkEmailAsSend implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -30,6 +29,9 @@ class MarkEmailAsSend
     {
         $mail = Mail::find($event->data['mail']['id']);
         $mail->send_at = Carbon::now();
-        $mail->save();
+
+        if (!$mail->save()) {
+            Log::error("Mail {$mail->id} could not be marked as SNED");
+        }
     }
 }

@@ -31,12 +31,14 @@ class GenericMail extends Mailable implements ShouldQueue
      */
     public function build()
     {
+        // Configure initial mailable
         $mailBuildable = $this
             ->subject($this->mail->subject);
 
+        // Append all attachments
         foreach ($this->mail->attachments as $attachment) {
             $mailBuildable = $mailBuildable->attachData(
-                $attachment->content, $attachment->filename
+                base64_decode($attachment->content), $attachment->filename
             );
         }
 
