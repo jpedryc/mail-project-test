@@ -9,4 +9,8 @@ user will be created with an assigned API token (for simplicity - plain-text ava
 
 * Laravel
 * Redis for queueing
-* [HELO by beyondcode](https://github.com/beyondcode/helo-laravel) for email testing 
+* [HELO by beyondcode](https://github.com/beyondcode/helo-laravel) for email testing
+
+### Testing
+
+`php artisan test`
