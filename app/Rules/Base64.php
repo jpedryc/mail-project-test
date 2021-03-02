@@ -26,6 +26,13 @@ class Base64 implements Rule
      */
     public function passes($attribute, $value)
     {
+        /**
+         * TEST-PROJECT-COMMENT
+         *
+         *  With more time, I would check if this actually will handle all different file types correctly etc.
+         *  I'm assuming attachments are not only images but also pdfs etc.
+         */
+
         // Returns false if not a valid base64 string
         return base64_decode($value, true);
     }

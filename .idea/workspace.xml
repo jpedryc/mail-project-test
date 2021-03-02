@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f775bc1c-d595-40fc-a0af-8f0f0d9ee86b" name="Default Changelist" comment="Simple attachment stream download added.">
-      <change afterPath="$PROJECT_DIR$/app/Traits/Base64FileTrait.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/MarkEmailAsSend.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/MarkEmailAsSend.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Mail/GenericMail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Mail/GenericMail.php" afterDir="false" />
+    <list default="true" id="f775bc1c-d595-40fc-a0af-8f0f0d9ee86b" name="Default Changelist" comment="Generic Mail small fixes (&amp; listener logging added)">
+      <change beforePath="$PROJECT_DIR$/tests/Feature/mock_base64.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +155,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1614635025296</updated>
-      <workItem from="1614635032827" duration="12015000" />
+      <workItem from="1614635032827" duration="12330000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit for PoC">
       <created>1614643448739</created>
@@ -194,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1614648354785</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Generic Mail small fixes (&amp; listener logging added)">
+      <created>1614648985368</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1614648985369</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,6 +211,7 @@
     <MESSAGE value="MailController - cleanup &amp; comments added" />
     <MESSAGE value="Git add basic base64 validator for attachment data" />
     <MESSAGE value="Simple attachment stream download added." />
-    <option name="LAST_COMMIT_MESSAGE" value="Simple attachment stream download added." />
+    <MESSAGE value="Generic Mail small fixes (&amp; listener logging added)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Generic Mail small fixes (&amp; listener logging added)" />
   </component>
 </project>
