@@ -3,7 +3,9 @@
 namespace App\Http\Requests;
 
 use App\Rules\Base64;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\ValidationException;
 
 class SendEmailsRequest extends FormRequest
 {
@@ -33,5 +35,10 @@ class SendEmailsRequest extends FormRequest
             'mails.*.attachments.*.filename' => 'required|string|max:512',
             'mails.*.attachments.*.content' => [ 'required', 'string', new Base64 ]
         ];
+    }
+
+    protected function failedValidation(Validator $validator)
+    {
+        throw new ValidationException(null, response()->json($validator->errors(), 422));
     }
 }

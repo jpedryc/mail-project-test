@@ -41,3 +41,8 @@ Route::middleware('auth:api')->group(function () {
     Route::get('download/{attachment}', [AttachmentController::class, 'download'])->name('download');
 
 });
+
+Route::fallback(function(){
+    return response()->json([
+        'message' => 'Page Not Found. If error persists, contact some@mail.com'], 404);
+});
