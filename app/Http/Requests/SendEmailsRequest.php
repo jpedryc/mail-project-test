@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\Base64;
 use Illuminate\Foundation\Http\FormRequest;
 
 class SendEmailsRequest extends FormRequest
@@ -30,7 +31,7 @@ class SendEmailsRequest extends FormRequest
             'mails.*.body' => 'nullable|string',
             'mails.*.attachments' => 'nullable|array',
             'mails.*.attachments.*.filename' => 'required|string|max:512',
-            'mails.*.attachments.*.content' => 'required|string'
+            'mails.*.attachments.*.content' => [ 'required', 'string', new Base64 ]
         ];
     }
 }
