@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "af1590bd-479f-468c-a4ff-03aa78692d41",
+		"name": "Vanillasoft TEST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mails\": [\n        {\n            \"from\": \"jan.pedryc@gmail.com\",\n            \"subject\": \"A test email\",\n            \"body\": \"Lorem ipsum dolor\",\n            \"attachments\": [\n                {\n                    \"filename\": \"cool_file.jpg\",\n                    \"content\": \"absbdfbsdfbdsf\"\n                }\n            ]\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/send?api_token=Flh9hGkab1CnzAKjJ6CIebiKXmaUG2gPjx3FiIljCUuQVf2kYtAcsdt9wU9M",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"send"
+					],
+					"query": [
+						{
+							"key": "api_token",
+							"value": "Flh9hGkab1CnzAKjJ6CIebiKXmaUG2gPjx3FiIljCUuQVf2kYtAcsdt9wU9M"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
