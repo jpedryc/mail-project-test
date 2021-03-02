@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AttachmentController;
 use App\Http\Controllers\MailController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -22,10 +23,21 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Mailable
 Route::middleware('auth:api')->group(function () {
 
+    /**
+     *  Mailable
+     */
+
     // List all sent emails
     Route::get('list', [MailController::class, 'list'])->name('list');
 
     // Send emails
     Route::post('send', [MailController::class, 'send'])->name('send');
+
+    /**
+     *  Attachments
+     */
+
+    // Download attachment
+    Route::get('download/{attachment}', [AttachmentController::class, 'download'])->name('download');
 
 });

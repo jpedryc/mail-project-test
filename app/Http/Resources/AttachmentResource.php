@@ -16,7 +16,7 @@ class AttachmentResource extends JsonResource
     {
         return [
             'filename' => $this->filename,
-            'content' => null
+            'content' => route('download', [ 'attachment' => $this, 'api_token' => $request->user()->api_token ])
         ];
     }
 }
